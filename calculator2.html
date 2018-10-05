@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>简单计算</title>
+<style type="text/css">
+	input{
+		margin-top:300px;
+		margin-left:600px;
+		color: #fff;
+		background-color:#303030;
+		width:150px;
+		height:50px;
+		text-align:center;
+	}
+</style>
+<script type="text/javascript">
+function calculate(){
+	var expression=prompt("请输入您的计算表达式，例如9+8+7(注意!只有您的输入合法时才能返回结果!)","1+1");
+	if(expression!=null){
+		var value=eval(expression);
+		alert("计算结果为:"+value);
+	}
+	else{
+		alert("再见!")
+	}
+}	
+</script>
+</head>
+<body>
+	<input name="button" type="button" onclick="calculate()" value="点击我进行计算">
+</body>
+</html>
