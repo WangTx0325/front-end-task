@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+	<title>Random Integers</title>
+	<style type="text/css">
+		body{
+			background-image: url(http://static.simpledesktops.com/uploads/desktops/2015/05/19/SimpleDesktops_Mario-2880x1800.png);
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+		.title{
+			text-align: center;
+			font-family: fantasy;
+			font-size: 50px;
+			text-shadow: 5px 5px 5px red;
+		}
+		.introduction{
+			float: left ;
+			width: 450px;
+			padding: 150px 100px;
+		}
+		.input{
+			float: right;
+			width: 360px;
+			padding: 170px 120px;
+		}
+		h1{
+			text-shadow: 3px 3px 3px gray;
+		}
+		p{
+			font-size: 20px;
+			color: #778899;
+		}
+		input[type="text"],#button{
+  		box-sizing: border-box;
+  		text-align: center;
+  		font-size: 1.4em;
+  		height: 2.7em;
+  		border-radius: 4px;
+  		border: 1px solid #c8cccf;
+  		color: #6a6f77;
+  		-webkit-appearance: none;
+  		-moz-appearance: none;
+  		display:block;
+  		outline: 0;
+  		padding: 0 1em;
+  		text-decoration: none;
+  		width: 100%;
+		}
+		input[type="text"]:focus{
+  		border: 1px solid #ff7496;
+		}
+	</style>
+</head>
+<body>
+	<h1 class="title">Random Integers</h1>
+	<div class="introduction">
+		<h1>欢迎使用这个web应用</h1>
+		<p>你可以使用它获取给定整数区间内的随机整数</p>
+		<h1>以下为使用注意</h1>
+		<p>1.最大值与最小值需位于[-1e9,1e9]区间内</p>
+		<p>2.你想生成随机整数的数目需位于[1,1e4]区间内</p>
+		<p>3.请保证你的填写正确 否则将获取不到返回值</p>
+	</div>
+	<div class="input">
+ 		<input type="text" id="value1" class="field" placeholder="请输入最小值"><br>
+		<input type="text" id="value2" class="field" placeholder="请输入最大值"><br>
+		<input type="text" id="value3" class="field" placeholder="请输入生成数目"><br>
+		<input type="button" id="button" value="生成随机数" onclick="generate()">
+	</div>
+	<script type="text/javascript">
+		function generate(){
+		var a=document.getElementById("value1").value;
+		var b=document.getElementById("value2").value;
+		var c=document.getElementById("value3").value;
+		var url='https://api.random.org/json-rpc/1/invoke';
+		var data={
+    	"jsonrpc": "2.0",
+    	"method": "generateIntegers",
+    	"params": {
+        	"apiKey": "af106ce1-baac-4249-b216-57fc6538cb58",
+        	"n": c,
+        	"min": a,
+        	"max": b,
+        	"replacement": true
+    	},
+    	"id": 1
+	};
+		var request={
+			headers:{
+				"content-type":"application/json-rpc"
+			},
+			body:JSON.stringify(data),
+			method:"POST"
+		};
+		fetch(url,request)
+		.then(response=>response.json())
+		.then(jsonData=>{
+			var Integers=jsonData.result.random.data;
+			alert(Integers);
+		})
+		.catch(error=>console.log(error));
+		}
+		</script>
+</body>
+</html>
