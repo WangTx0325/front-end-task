@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>课表</title>
+   <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+   <script src="../javascripts/index.js"></script>
+   <style type="text/css">
+   	#btn{
+   		box-sizing: border-box;
+  		text-align: center;
+  		font-size: 1.4em;
+  		height: 2.7em;
+  		border-radius: 4px;
+  		border: 1px solid #c8cccf;
+  		color: #6a6f77;
+  		-webkit-appearance: none;
+  		-moz-appearance: none;
+  		display:block;
+  		outline: 0;
+  		padding: 0 1em;
+  		text-decoration: none;
+  		width: 74%;
+   	}
+   </style>
+</head>
+<body>
+   <table width="1000" border="1" cellspacing="5" cellpadding="10">
+  <caption>
+    课程表
+  </caption>
+  <tr>
+    <td> </td>
+    <td> 星期一</td>
+    <td> 星期二</td>
+    <td> 星期三</td>
+    <td> 星期四</td>
+    <td> 星期五</td>
+  </tr>
+  <tr>
+    <td> 第一节</td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
+    <td class="eighth"> </td>
+    <td> </td>
+  </tr>
+  <tr>
+    <td> 第二节</td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
+    <td class="eighth"> </td>
+    <td> </td>
+  </tr>
+  <tr>
+    <td> 第三节</td>
+    <td class="first"> </td>
+    <td class="fourth"> </td>
+    <td class="sixth"> </td>
+    <td class="ninth"> </td>
+    <td> </td>
+  </tr>
+  <tr>
+    <td> 第四节</td>
+    <td class="first"> </td>
+    <td class="fourth"> </td>
+    <td class="sixth"> </td>
+    <td class="ninth"> </td>
+    <td> </td>
+  </tr>
+  <tr>
+    <td> 第五节</td>
+    <td class="first"> </td>
+    <td> </td>
+    <td class="sixth"> </td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr>
+    <td> 第六节</td>
+    <td class="second"> </td>
+    <td class="fifth"> </td>
+    <td class="seventh"> </td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr>
+    <td> 第七节</td>
+    <td class="second"> </td>
+    <td class="fifth"> </td>
+    <td class="seventh"> </td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr>
+    <td> 第八节</td>
+    <td> </td>
+    <td class="fifth"> </td>
+    <td class="seventh"> </td>
+    <td> </td>
+    <td class="eleventh"> </td>
+  </tr>
+  <tr>
+    <td> 第九节</td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
+    <td class="eleventh"> </td>
+  </tr>
+  <tr>
+    <td> 第十节</td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
+  </tr>
+  <tr>
+    <td> 第十一节</td>
+    <td class="third"> </td>
+    <td> </td>
+    <td> </td>
+    <td class="tenth"> </td>
+    <td> </td>
+  </tr>
+  <tr>
+    <td> 第十二节</td>
+    <td class="third"> </td>
+    <td> </td>
+    <td> </td>
+    <td class="tenth"> </td>
+    <td> </td>
+  </tr>
+  <tr>
+    <td> 第十三节</td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
+    <td> </td>
+  </tr>
+</table>
+<input type="button" id="btn" value="获取课程" onclick="getSchedule()">
+</body>
+</html>
